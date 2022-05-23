@@ -10,8 +10,12 @@ import java.util.List;
 @Repository
 public class MemberRepository {
 
-    @PersistenceContext
-    private EntityManager em;
+    // @PersistenceContext 자동으로 해줌
+    private final EntityManager em;
+
+    public MemberRepository(EntityManager em) {
+        this.em = em;
+    }
 
     public void save(Member member) {
         em.persist(member);
