@@ -25,6 +25,7 @@ public class Order {
     @JoinColumn(name = "member_id") // 외래키 설정
     private Member member;
 
+    // 일대다는 기본값이 LAZY
     // 연관관계 주인이 아님을 의미
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems = new ArrayList<>();

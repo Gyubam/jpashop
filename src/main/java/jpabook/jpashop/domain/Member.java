@@ -1,5 +1,6 @@
 package jpabook.jpashop.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,6 +26,7 @@ public class Member {
 
     // 연관관계 주인이 아님을 의미
     @OneToMany(mappedBy = "member")
+    @JsonIgnore
     private List<Order> orders = new ArrayList<>();
 
 
